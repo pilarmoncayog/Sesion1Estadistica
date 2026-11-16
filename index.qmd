@@ -1,0 +1,138 @@
+---
+title: "Conceptos básicos de Estadística"
+author: 
+  - name: Óscar Fernando González Barrera<br>Rosa del Pilar Moncayo González
+    affiliation: "Escuela Superior de Administración Pública"
+    affiliation-url: "https://www.esap.edu.co/"
+lang: es
+title-block-banner: true
+title-block-banner-color: "#ffffff"
+
+format:
+  html:
+    toc: true
+    toc-title: "Contenido"
+    toc-depth: 2
+    toc-location: left
+    embed-resources: true
+    css: styles.css
+---
+
+# 1. Historia de la Estadística
+
+La estadística no surgió de improviso: es el resultado de un proceso largo, desde la simple recolección de datos hasta su interpretación rigurosa. Su origen se conoce por crónicas, datos escritos y restos arqueológicos. Como disciplina, nace en Alemania a mediados del siglo XVII (Gottfried Achenwall, 1719-1772, usó la palabra y la separó de la Sociología). La palabra suele derivarse de *status* (estado).
+
+| Época / pueblo | Aporte |
+|:---|:---|
+| Prehistoria (≈ 8000 a. C.) | Gráficos y símbolos en pieles, rocas, maderas y cuevas para contar personas, animales o cosas. En Cerdeña, los Nuragas hacían muescas para contar ganado y caza. |
+| Egipto (≈ 3050 a. C.) | Censos y análisis de población y renta, antes de construir las pirámides. |
+| Babilonia (≈ 3000 a. C.) | Tablillas de arcilla con datos de producción agrícola y de bienes vendidos o trocados. |
+| China (2238 a. C.) | El emperador Yao ordenó una estadística agrícola, industrial y comercial; hay censos de hace más de cuarenta siglos. |
+| Asiria | Sargón II fundó la biblioteca de Nínive, con datos de producción, cuentas, medicina y astronomía. |
+| Biblia | Censo de Moisés (libro de Números). |
+| Grecia | Observaciones sobre tierras y servicio militar; unos 69 censos con fines tributarios, sociales y militares. |
+| Roma | Censo cada cinco años; registro de nacimientos, defunciones, matrimonios, ganado y riquezas de tierras conquistadas. |
+| Edad Media | Casi olvidada; destacan los registros de tierras de la Iglesia (Pipino el Breve, 758; Carlomagno, 762). |
+| Incas (1200-1527 d. C.) | Registraban nacimientos, defunciones y población por edad y sexo usando *quipus* (cuerdas con nudos). |
+| Iglesia (s. XVI) | Tras el Concilio de Trento, obligación de inscribir nacimientos, matrimonios y defunciones. |
+| Siglo XVII | Graunt (1662) analiza las *Bills of Mortality* y hace predicciones; Neumann (1691) refuta que en años terminados en siete muera más gente; Halley construye tablas de mortalidad. |
+| Siglos XVII-XVIII | Bernoulli, Maseres, Lagrange y Laplace desarrollan la teoría de probabilidades. |
+| Siglo XIX | Quételet aplica el método estadístico a las ciencias sociales; Laplace, Gauss y Legendre desarrollan la teoría de errores y los mínimos cuadrados. |
+| Siglo XX hasta hoy | La computación transforma la disciplina (Benzécri en Francia, Tukey en EE. UU.); la estadística pasa de tabular datos a interpretarlos. |
+
+Tres grandes fases: (1) los censos, (2) de la descripción de conjuntos a la aritmética política y (3) estadística y cálculo de probabilidades.
+
+# 2. Conceptos fundamentales
+
+**Estadística.** Ciencia que recoge, organiza, presenta, analiza e interpreta datos para tomar decisiones más eficaces.
+
+- **Estadística descriptiva:** organiza, resume y presenta datos de manera informativa (cuadros, gráficos, promedios).
+- **Estadística inferencial (inductiva):** determina propiedades de una población a partir de una muestra, y permite pronosticar.
+
+| Concepto | Definición |
+|:---|:---|
+| Población | Conjunto de todos los elementos con una característica común. Puede ser *finita* (número delimitado) o *infinita* (no delimitado). |
+| Muestra | Parte representativa de la población. |
+| Unidad o elemento | Persona, objeto o entidad que compone la población o la muestra. |
+| Marco muestral | Lista o mapa con todas las unidades identificadas, de donde se selecciona la muestra. |
+| Característica | Rasgo de los elementos que interesa estudiar (variable o atributo). |
+| Variable | Característica de los elementos que puede tomar distintos valores y en la que se almacena la información recolectada. Es única, pero los valores que contiene dependen del instrumento utilizado. Pueden ser cualitativas (atributos) o cuantitativas (ver secciones 3 y 4). |
+| Parámetro | Medida calculada sobre la **población**. |
+| Estimador (estadístico) | Medida calculada sobre la **muestra**; sirve para estimar el parámetro. |
+| Censo | Investigación total de la población. |
+| Muestreo | Investigación parcial; puede ser *aleatorio* (todos los elementos tienen igual probabilidad de ser elegidos) o *no aleatorio* (por conveniencia, voluntario, etc.). |
+
+**¿Por qué se toman muestras?** Por costo, por tiempo y porque algunas pruebas destruyen el objeto (control de calidad, un hemograma).
+
+::: {.callout-note collapse="true" title="Fuentes e instrumentos"}
+**Fuentes.** *Primarias:* datos obtenidos directamente de la persona o entidad. *Secundarias:* datos tomados de publicaciones.
+
+**Instrumentos:** encuestas, entrevistas, cuestionarios, observación, control de calidad y reportes de producción.
+:::
+
+**Fenómenos que estudia la estadística.** Son colectivos (no casos individuales), de frecuente repetición, de distinta frecuencia, observables (se manifiestan al exterior) y cuantificables.
+
+# 3. Variables según su naturaleza
+
+La información recolectada se almacena en **variables**.
+
+- **Cualitativas (atributos):** no numéricas, o numéricas solo como código (no miden nada). Ej.: género, estado civil, marca, color de ojos.
+- **Cuantitativas:** se pueden medir.
+  - **Discretas:** cuentan, suelen ser enteros. Ej.: camas de un hospital, empleados de una fábrica.
+  - **Continuas:** miden, admiten decimales. Ej.: temperatura, estatura, litros de leche.
+
+::: {.callout-note collapse="true" title="Ver ejemplo en R"}
+```{r}
+estado_civil <- factor(c("Soltero", "Casado", "Otro", "Casado"))  # cualitativa
+camas        <- c(120L, 85L, 40L)                                  # discreta
+temperatura  <- c(36.5, 37.2, 38.1)                                # continua
+
+sapply(list(estado_civil = estado_civil, camas = camas, temperatura = temperatura), class)
+```
+:::
+
+# 4. Variables según la escala de medición
+
+El nivel de medición determina qué cálculos y pruebas son apropiados.
+
+::: panel-tabset
+## Nominal
+
+Los datos solo se clasifican y se cuentan; el orden es convencional.
+
+- **Ejemplos:** marca de automóvil, número de camiseta.
+- **En R:** `factor()`
+
+## Ordinal
+
+Los datos se ordenan, pero la distancia entre categorías no es medible.
+
+- **Ejemplos:** nivel educativo, posición en una lista.
+- **En R:** `factor(ordered = TRUE)`
+
+## Intervalo
+
+Diferencias iguales significan diferencias iguales en la medición; el cero es relativo.
+
+- **Ejemplos:** temperatura en °C, coeficiente intelectual, talla de ropa.
+- **En R:** `numeric`
+
+## Razón
+
+Como el intervalo, pero con cero absoluto ("no hay") y razones con sentido.
+
+- **Ejemplos:** dinero, longitud, peso, pacientes atendidos.
+- **En R:** `numeric`
+:::
+
+::: {.callout-note collapse="true" title="Ver ejemplo en R"}
+```{r}
+nivel <- factor(
+  c("Primaria", "Superior", "Secundaria", "Primaria"),
+  levels  = c("Sin nivel", "Primaria", "Secundaria", "Superior"),
+  ordered = TRUE
+)
+nivel
+table(nivel)
+```
+:::
