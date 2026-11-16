@@ -20,10 +20,12 @@ format:
 
 # 1. Historia de la Estadística
 
+![](images/clipboard-4003752058.png)
+
 La estadística no surgió de improviso: es el resultado de un proceso largo, desde la simple recolección de datos hasta su interpretación rigurosa. Su origen se conoce por crónicas, datos escritos y restos arqueológicos. Como disciplina, nace en Alemania a mediados del siglo XVII (Gottfried Achenwall, 1719-1772, usó la palabra y la separó de la Sociología). La palabra suele derivarse de *status* (estado).
 
 | Época / pueblo | Aporte |
-|:---|:---|
+|:-----------------------------------|:-----------------------------------|
 | Prehistoria (≈ 8000 a. C.) | Gráficos y símbolos en pieles, rocas, maderas y cuevas para contar personas, animales o cosas. En Cerdeña, los Nuragas hacían muescas para contar ganado y caza. |
 | Egipto (≈ 3050 a. C.) | Censos y análisis de población y renta, antes de construir las pirámides. |
 | Babilonia (≈ 3000 a. C.) | Tablillas de arcilla con datos de producción agrícola y de bienes vendidos o trocados. |
@@ -44,13 +46,15 @@ Tres grandes fases: (1) los censos, (2) de la descripción de conjuntos a la ari
 
 # 2. Conceptos fundamentales
 
+![](images/clipboard-3005423969.png){width="800"}
+
 **Estadística.** Ciencia que recoge, organiza, presenta, analiza e interpreta datos para tomar decisiones más eficaces.
 
 - **Estadística descriptiva:** organiza, resume y presenta datos de manera informativa (cuadros, gráficos, promedios).
 - **Estadística inferencial (inductiva):** determina propiedades de una población a partir de una muestra, y permite pronosticar.
 
 | Concepto | Definición |
-|:---|:---|
+|:-----------------------------------|:-----------------------------------|
 | Población | Conjunto de todos los elementos con una característica común. Puede ser *finita* (número delimitado) o *infinita* (no delimitado). |
 | Muestra | Parte representativa de la población. |
 | Unidad o elemento | Persona, objeto o entidad que compone la población o la muestra. |
@@ -73,6 +77,8 @@ Tres grandes fases: (1) los censos, (2) de la descripción de conjuntos a la ari
 **Fenómenos que estudia la estadística.** Son colectivos (no casos individuales), de frecuente repetición, de distinta frecuencia, observables (se manifiestan al exterior) y cuantificables.
 
 # 3. Variables según su naturaleza
+
+![](images/clipboard-3711555643.png){width="800"}
 
 La información recolectada se almacena en **variables**.
 
